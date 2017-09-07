@@ -1,7 +1,7 @@
 package com.hendisantika.springbootwebfluxreactivemongoexample.controller;
 
 import com.hendisantika.springbootwebfluxreactivemongoexample.model.Person;
-import com.hendisantika.springbootwebfluxreactivemongoexample.repository.PersonRespository;
+import com.hendisantika.springbootwebfluxreactivemongoexample.repository.PersonRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -27,7 +27,7 @@ import static org.springframework.web.reactive.function.server.ServerResponse.ok
 @Configuration
 public class RoutesConfiguration {
     @Bean
-    RouterFunction<?> routes(PersonRespository personRespository) {
+    RouterFunction<?> routes(PersonRepository personRespository) {
         return nest(path("/person"),
 
                 route(RequestPredicates.GET("/{id}"),

@@ -15,7 +15,7 @@ import reactor.core.publisher.Mono;
  * Time: 9:39 PM
  * To change this template use File | Settings | File Templates.
  */
-public interface PersonRespository extends ReactiveMongoRepository<Person, String>{
+public interface PersonRepository extends ReactiveMongoRepository<Person, String>{
     Flux<Person> findByName(String name);
 
     @Query("{ 'name': ?0, 'age': ?1}")
