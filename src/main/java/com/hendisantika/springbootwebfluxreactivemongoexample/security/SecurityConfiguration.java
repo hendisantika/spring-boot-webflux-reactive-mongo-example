@@ -23,7 +23,7 @@ public class SecurityConfiguration {
     @Bean
     UserDetailsRepository userDetailsRepository() {
         UserDetails hendi = withUsername("hendi").password("password").roles("USER").build();
-        UserDetails santika = withUsername("hendi").password("password").roles("USER", "ADMIN").build();
+        UserDetails santika = withUsername("santika").password("password").roles("USER", "ADMIN").build();
         return new MapUserDetailsRepository(hendi, santika);
     }
 }
