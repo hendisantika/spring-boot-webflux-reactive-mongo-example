@@ -2,8 +2,6 @@ package com.hendisantika.springbootwebfluxreactivemongoexample.model;
 
 import org.springframework.data.annotation.Id;
 
-import javax.persistence.Entity;
-
 /**
  * Created by IntelliJ IDEA.
  * User: hendisantika
@@ -14,11 +12,17 @@ import javax.persistence.Entity;
  * To change this template use File | Settings | File Templates.
  */
 
-@Entity
+//@Document
+//@Data
+//@AllArgsConstructor
+//@NoArgsConstructor
+//@ToString
+//    @Entity
 public class Person {
     @Id
     private String id;
-    private String name;
+    private String firstName;
+    private String lastName;
     private int age;
 
     public String getId() {
@@ -29,12 +33,20 @@ public class Person {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lasttName) {
+        this.lastName = lasttName;
     }
 
     public int getAge() {
@@ -48,18 +60,10 @@ public class Person {
     public Person() {
     }
 
-    public Person(String id, String name, int age) {
+    public Person(String id, String firstName, String lastName, int age) {
         this.id = id;
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "Person{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                '}';
     }
 }
