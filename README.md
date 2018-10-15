@@ -36,14 +36,14 @@ And then go to http://localhost:8080 to test the API's.
 
 You can try the following API's once the server is running.
 
-GET /person
+`GET /person`
 
-curl http://localhost:8080/person -v -u hendi:password
+`curl http://localhost:8080/person -v -u hendi:password`
 
-GET /person/{id}
+`GET /person/{id}`
 
-curl http://localhost:8080/person/{id} -v -u hendi:password
+`curl http://localhost:8080/person/{id} -v -u hendi:password`
 
-POST /person
+`POST /person`
 
-curl -X POST -d '{"name":"Uchiha Madara","age":120}' -H "Content-Type: application/json" http://localhost:8080/person -v -u hendi:password
+`curl -X POST -d '{"name":"Uchiha Madara","age":120}' -H "Content-Type: application/json" http://localhost:8080/person -v -u hendi:password`
