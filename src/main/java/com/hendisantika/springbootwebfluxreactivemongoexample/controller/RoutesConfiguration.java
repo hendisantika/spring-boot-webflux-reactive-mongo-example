@@ -27,15 +27,15 @@ import static org.springframework.web.reactive.function.server.ServerResponse.ok
 @Configuration
 public class RoutesConfiguration {
     @Bean
-    RouterFunction<?> routes(PersonRepository personRespository) {
+    RouterFunction<?> routes(PersonRepository personRepository) {
         return nest(path("/person"),
 
                 route(RequestPredicates.GET("/{id}"),
-                        request -> ok().body(personRespository.findById(request.pathVariable("id")), Person.class))
+                        request -> ok().body(personRepository.findById(request.pathVariable("id")), Person.class))
 
                         .andRoute(method(HttpMethod.POST),
                                 request -> {
-                                    personRespository.insert(request.bodyToMono(Person.class)).subscribe();
+                                    personRepository.insert(request.bodyToMono(Person.class)).subscribe();
                                     return ok().build();
                                 })
         );

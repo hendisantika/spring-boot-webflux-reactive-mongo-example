@@ -2,7 +2,7 @@ package com.hendisantika.springbootwebfluxreactivemongoexample.controller;
 
 import com.hendisantika.springbootwebfluxreactivemongoexample.model.Person;
 import com.hendisantika.springbootwebfluxreactivemongoexample.repository.PersonRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,12 +20,12 @@ import reactor.core.publisher.Flux;
 
 @RestController
 @RequestMapping("/person")
+@RequiredArgsConstructor
 public class PersonController {
-    @Autowired
-    private PersonRepository personRespository;
+    private final PersonRepository personRepository;
 
     @GetMapping
     public Flux<Person> index() {
-        return personRespository.findAll();
+        return personRepository.findAll();
     }
 }

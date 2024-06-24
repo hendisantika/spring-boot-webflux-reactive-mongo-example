@@ -1,6 +1,11 @@
 package com.hendisantika.springbootwebfluxreactivemongoexample.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * Created by IntelliJ IDEA.
@@ -12,58 +17,15 @@ import org.springframework.data.annotation.Id;
  * To change this template use File | Settings | File Templates.
  */
 
-//@Document
-//@Data
-//@AllArgsConstructor
-//@NoArgsConstructor
-//@ToString
-//    @Entity
+@Document
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class Person {
     @Id
     private String id;
     private String firstName;
     private String lastName;
     private int age;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lasttName) {
-        this.lastName = lasttName;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public Person() {
-    }
-
-    public Person(String id, String firstName, String lastName, int age) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-    }
 }
