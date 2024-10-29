@@ -34,6 +34,6 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
         annotationProcessor 'org.projectlombok:lombok'
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
-    testImplementation('de.flapdoodle.embed:de.flapdoodle.embed.mongo:4.17.0')
+    testImplementation('de.flapdoodle.embed:de.flapdoodle.embed.mongo:4.18.0')
 	testImplementation('io.projectreactor:reactor-test')
 }
